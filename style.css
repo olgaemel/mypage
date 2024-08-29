@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sent-serif;
+  margin: 0;
+}
+
+nav {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 40;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  height: 12vh;
+  box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.2);
+  z-index: 20;
+}
+
+.container ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  list-style-type: none;
+}
+
+.container ul li {
+  padding: 30px;
+  cursor: pointer;
+  line-height: 1;
+  position: relative;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.container ul li a {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  padding: 2px;
+}
+
+.container ul li a::after {
+  display: block;
+  position: absolute;
+  left: 0; /*изменить на right:0;, чтобы изменить направление подчёркивания */
+  bottom: -10px;
+  width: 0; /*задаём длинну линии до наведения курсора*/
+  height: 2px; /*задаём ширину линии*/
+  background-color: #315cfd; /*задаём цвет линии*/
+  content: '';
+  transition: width 0.3s ease-out; /*задаём время анимации*/
+}
+
+.container ul li a:hover::after {
+  width: 100%;
+}
+
+.blockcontainer {
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 65vh;
+  margin: 170px 50px;
+  z-index: 0;
+}
+
+.right {
+  width: 40%;
+  margin: 0 30px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.right span {
+  font-size: 20px;
+  color: #4e5572;
+  font-weight: 400;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.right span::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 3px;
+  bottom: -10px;
+  background-color: #315cfd;
+  left: 0;
+}
+
+.right h1 {
+  font-size: 48px;
+  color: #0c163d;
+  font-weight: 400;
+}
+
+.right p {
+  font-size: 20px;
+  color: #4e5572;
+  font-weight: 400;
+}
+
+.left {
+  width: 40%;
+  margin: 0 30px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.pic {
+  transition: all 1s;
+  /* transition: 5s all 1s ease-in-out; */
+  transform: rotate(0deg);
+}
+
+/* .pic:hover {
+  transform: rotate(45deg);
+  animation: 3s infinite alternate slidein;
+} */
+
+.pic.active {
+  transform: rotate(45deg);
+  animation: 30s infinite alternate slidein;
+}
+
+@keyframes slidein {
+  0% {
+    rotate: 15deg;
+  }
+
+  25% {
+    rotate: 45deg;
+  }
+
+  50% {
+    rotate: 90deg;
+  }
+
+  100% {
+    rotate: 360deg;
+  }
+}
+
+.info-text h1 {
+  font-weight: 800;
+  font-size: 48px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.info-text p {
+  padding: 50px;
+  margin: 0 50px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(200px 300px);
+  grid-column-gap: 10px;
+  grid-row-gap: 1em;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.project-tile {
+  border: none;
+
+  background-color: white;
+}
+
+.first {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+.seven {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
